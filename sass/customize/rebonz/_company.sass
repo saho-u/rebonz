@@ -1,0 +1,27 @@
+.companyinfo
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  margin: 0 auto
+  max-width: 60rem
+  @include responsive(md)
+    @include size-sm
+
+  dt
+    width: 40%
+    font-weight: normal
+  dd
+    width: 60%
+    text-align: left
+    font-weight: bold
+
+  dt,dd
+    padding: 2.4rem 0
+    border-bottom: solid .1rem $color__background-hr
+    &:nth-child(-n + 2)
+      border-top: solid .1rem $color__background-hr
+    &.high
+      height: 9rem
+
+  dt.high
+    padding: 3.2rem 0

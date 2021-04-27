@@ -1,0 +1,71 @@
+.site-header
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 2
+
+.header-t
+  background: #111
+  @include size-md
+  color: $color__text-hover
+  padding: 1rem 0
+  .info_nav
+    display: flex
+    padding: 1rem
+    font-size: 2rem
+    li
+      margin-right: 3rem
+      a:hover
+        color: #fff
+
+.main-header
+  padding: 3rem
+  border-bottom: 1px solid #dbdbdb
+  @include responsive(md)
+    padding: 1.2rem 0
+
+
+  a
+    color: $color__text-main
+    &:hover
+      opacity: .4
+  .container
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+  .text-logo
+    @include size-xl
+    @include responsive(md)
+      @include size-md
+
+  .sitenav
+    display: flex
+    &__item
+      margin-left: 3.5rem
+
+
+// トップページのとき
+.hasbanner
+  &.site-header
+    position: absolute
+  .header-t
+    background: none
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+    color: #fff
+    a
+      color: #fff
+    .info_nav
+      li
+        a:hover
+          color: $color__text-hover
+
+  .main-header
+    border-bottom: 0
+    a
+      color: #fff
+
+
+@include responsive(md)
+  .header-t .info_nav
+    display: none

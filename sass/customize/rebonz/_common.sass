@@ -1,0 +1,93 @@
+@charset "UTF-8"
+
+/* common
+ *=====================================
+/* sp
+@font-face
+  font-family: 'supria'
+  src: url("../fonts/SupriaSansBold.otf") format("opentype"), url("../fonts/SupriaSansBold.woff") format("woff"), url("../fonts/SupriaSansBold.woff2") format("woff2")
+
+html
+  /* font-size:1.0rem = 10px
+  font-size: 62.5%
+
+body
+  font-family: '游ゴシック', 'Yu Gothic', '游ゴシック体', 'YuGothic', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'HiraKakuProN-W3', 'メイリオ', 'Meiryo', 'Droid Sans', 'Roboto'
+  font-size: 12px
+  font-size: 1.2rem
+  font-weight: 500
+  -webkit-text-size-adjust: 100%
+  background: #FFF
+
+.all-wrap
+  overflow: hidden
+  width: 100%
+
+img
+  width: 100%
+
+*
+  line-height: 1.2em
+  letter-spacing: 1.2px
+
+p
+  margin: 0
+
+.pc
+  display: none
+
+.sp
+  display: block
+
+i
+  padding-right: 5px
+
+.bold
+  font-weight: bold
+
+.text-right
+  text-align: right
+
+@media screen and (min-width: 769px)
+  /* pc
+
+  body
+    font-size: 16px
+    font-size: 1.6rem
+
+  .pc
+    display: block
+
+  .sp
+    display: none
+
+  i
+    padding-right: 10px
+
+.site-content
+  padding: 7rem 0
+
+.container
+  max-width: 117rem
+  margin: 0 auto
+  padding: 0 1.5rem
+  @include responsive(md)
+    max-width: 480px
+    margin-left: auto
+    margin-right: auto
+  &__inner
+    margin-top: 8rem
+    @include responsive(md)
+      margin-top: 6rem
+
+.ct, .entry-title
+  font-size: 5rem
+  font-weight: bold
+  @include responsive(md)
+    font-size: 4rem
+
+.ch
+  font-size: 3.2rem
+  font-weight: bold
+  @include responsive(md)
+    font-size: 2.8rem

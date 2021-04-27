@@ -1,0 +1,23 @@
+.site-main
+  text-align: center
+
+
+// プライバシーポリシーページ
+.privacy
+  text-align: left
+  h2
+    font-weight: bold
+    @include size-md
+    margin: 3.2rem 0 .4rem
+  p, ul
+    padding-left: 2.4rem
+  li
+    list-style: disc
+    margin-left: 2.4rem
+
+@include responsive(md)
+  .privacy
+    p, ul
+      padding-left: 0
+    li
+      margin-left: 1.6rem

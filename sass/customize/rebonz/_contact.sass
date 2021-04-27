@@ -1,0 +1,60 @@
+.contactform
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  justify-content: space-between
+  margin: 0 auto
+  width: 60rem
+  max-width: 100%
+  @include responsive(md)
+    display: block
+
+  dt,dd
+    padding: 2.4rem 0
+  dt
+    width: 30%
+    font-weight: normal
+    text-align: right
+    opacity: .8
+    @include responsive(md)
+      text-align: left
+      padding: 0 0 .8rem
+      width: 100%
+
+    &.reqired::after
+      content: '必須'
+      font-size: .7rem
+      padding: .5rem
+      background:#ff9393
+      color: #fff
+      border-radius: .2rem
+      margin-left: .5rem
+      position: relative
+      bottom: .1rem
+
+  dd
+    width: 65%
+    text-align: left
+    font-weight: bold
+    @include responsive(md)
+      padding: 0
+      margin-bottom: 3.2rem
+      width: 100%
+
+    input, textarea
+      padding: .8rem 1.2rem
+      width: 100%
+      @include size-sm
+      cursor: inherit
+      &::placeholder
+        opacity: .4
+        font-weight: normal
+      @include responsive(md)
+        width: 100%
+
+    textarea
+      width: calc(100% - 2.4rem)
+
+
+  .btn-block span
+    display: none

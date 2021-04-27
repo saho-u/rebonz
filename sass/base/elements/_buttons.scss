@@ -1,0 +1,51 @@
+.btn-block {
+	width: 100%;
+}
+
+.btn {
+	@include size-md;
+	color: $color__button-font;
+	background: $color__button;
+	border-radius: .4rem;
+	padding: 1.6rem 0;
+	transition: ease 0.2s;
+	cursor: pointer;
+	font-weight: bold;
+	margin: 2rem auto 0;
+	position: relative;
+	width: 30rem;
+
+	&:hover {
+		background-color: $color__button-hover;
+		opacity: .7;
+		color: $color__button;
+	}
+
+	&:active,
+	&:focus {
+		color: $color__button-font;
+	}
+
+	a {
+		@include contents__link;
+	}
+}
+
+.btn-send {
+	@include size-sm;
+	color: $color__button;
+	border: solid .1rem $color__button !important;
+	border-radius: .4rem !important;
+	padding: 1.6rem 0;
+	transition: ease 0.2s;
+	cursor: pointer;
+	font-weight: bold;
+	margin: 4rem auto 0;
+	width: 30rem;
+
+	&:hover {
+		background-color: $color__button;
+		opacity: .7;
+		color: $color__button-font;
+	}
+}

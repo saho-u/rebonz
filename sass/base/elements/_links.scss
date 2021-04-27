@@ -1,0 +1,23 @@
+a {
+	text-decoration: none;
+	color: $color__text-main;
+	&:visited {
+		color: $color__link-visited;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+			transition: ease 0.2s;
+			color: $color__text-hover;
+	}
+
+	&:focus {
+		outline: thin dotted;
+	}
+
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}

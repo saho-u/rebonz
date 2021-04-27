@@ -1,0 +1,20 @@
+ul,
+ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+li > ul,
+li > ol {
+	margin: 0;
+	padding: 0;
+}
+
+dt {
+	font-weight: 700;
+}
+
+dt, dd {
+	margin: 0;
+}

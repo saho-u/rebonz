@@ -1,0 +1,1418 @@
+@charset "UTF-8";
+/*!
+Theme Name: rebonz
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: rebonz
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+rebonz is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic
+	- Normalize
+	- Box sizing
+# Base
+	- Typography
+	- Elements
+	- Links
+	- Forms
+## Layouts
+# Components
+	- Navigation
+	- Posts and pages
+	- Comments
+	- Widgets
+	- Media
+	- Captions
+	- Galleries
+# plugins
+	- Jetpack infinite scroll
+# Utilities
+	- Accessibility
+	- Alignments
+
+--------------------------------------------------------------*/
+/* reset
+--------------------------------------------- */
+/* ---------------------------------------------
+  Reset
+--------------------------------------------- */
+html {
+	margin: 0 !important;
+	padding: 0;
+}
+
+body {
+	margin: 0 !important;
+	padding: 0;
+	font-family: sans-serif;
+	font-size: 14px;
+}
+
+div, span {
+	margin: 0;
+	padding: 0;
+}
+
+address {
+	font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	font-weight: normal;
+}
+
+div, span, p, pre, code, blockquote, q {
+	margin: 0;
+	padding: 0;
+}
+
+article, aside, figure, main, figcaption, footer, header, nav, section {
+	display: block;
+}
+
+code, cite, dfn, em, strong, var {
+	font-style: normal;
+	font-weight: normal;
+}
+
+ins, del {
+	text-decoration: none;
+}
+
+abbr, acronym {
+	border: 0;
+	font-variant: normal;
+}
+
+sup {
+	vertical-align: top;
+}
+
+sub {
+	vertical-align: baseline;
+}
+
+img {
+	border: 0;
+	vertical-align: bottom;
+}
+
+a {
+	outline: 0;
+	text-decoration: none;
+	color: inherit;
+}
+
+a:link, a:visited, a:hover, a:active {
+	outline: 0;
+	text-decoration: none;
+	color: inherit;
+}
+
+/* List--------------------------------------------- */
+ul, ol, dl, dt, dd {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* Table
+--------------------------------------------- */
+table {
+	margin: 0;
+	padding: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+tr, td, thead, tfoot, tbody {
+	margin: 0;
+	padding: 0;
+}
+
+th {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	text-align: left;
+}
+
+caption {
+	font-weight: normal;
+	text-align: left;
+}
+
+/* Form
+--------------------------------------------- */
+select, input, textarea, button {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	border-radius: 0;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	background: none transparent;
+	vertical-align: middle;
+	font-size: inherit;
+	color: inherit;
+	box-sizing: content-box;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+::-ms-expand, ::-ms-check, ::-ms-clear, select::-ms-expand {
+	display: none;
+}
+
+input[type=radio], input[type=checkbox] {
+	-moz-appearance: checkbox-container;
+	width: 0;
+	height: 0;
+}
+
+input[type="submit"], input[type="button"], input[type="text"], input[type="textarea"], input[type="email"], input[type="password"] {
+	border-radius: 0;
+	-webkit-box-sizing: content-box;
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+	border: none;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+input[type="submit"], input[type="button"] {
+	outline: none;
+}
+
+input[type="submit"]::-webkit-search-decoration, input[type="button"]::-webkit-search-decoration, input[type="text"]::-webkit-search-decoration, input[type="textarea"]::-webkit-search-decoration, input[type="email"]::-webkit-search-decoration, input[type="password"]::-webkit-search-decoration {
+	display: none;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover {
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+	-ms-filter: "alpha(opacity=80)";
+	-moz-opacity: 0.8;
+	-khtml-opacity: 0.8;
+	zoom: 1;
+}
+
+/* Clearfix
+--------------------------------------------- */
+.clearfix:after {
+	clear: both;
+	content: " ";
+	display: block;
+}
+
+/* = font-size
+----------------------------------------------- */
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+/* Box sizing
+--------------------------------------------- */
+/* Inherit box-sizing to more easily change it's value on a component level.
+@link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+/* Typography
+--------------------------------------------- */
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: #404040;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	margin: 0;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", courier, monospace;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+/* Elements
+--------------------------------------------- */
+body {
+	background: #fff;
+}
+
+hr {
+	background-color: #f2f2f2;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+ul,
+ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+li > ul,
+li > ol {
+	margin: 0;
+	padding: 0;
+}
+
+dt {
+	font-weight: 700;
+}
+
+dt, dd {
+	margin: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+/* Links
+--------------------------------------------- */
+a {
+	text-decoration: none;
+	color: #404040;
+}
+
+a:visited {
+	color: #800080;
+}
+
+a:hover, a:focus, a:active {
+	transition: ease 0.2s;
+	color: #a0a0a0;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover, a:active {
+	outline: 0;
+}
+
+/* Forms
+--------------------------------------------- */
+.btn-block {
+	width: 100%;
+}
+
+.btn {
+	font-size: 1.8rem;
+	line-height: 2.7rem;
+	color: #fff;
+	background: #0aa3f3;
+	border-radius: .4rem;
+	padding: 1.6rem 0;
+	transition: ease 0.2s;
+	cursor: pointer;
+	font-weight: bold;
+	margin: 2rem auto 0;
+	position: relative;
+	width: 30rem;
+}
+
+.btn:hover {
+	background-color: #fff;
+	opacity: .7;
+	color: #0aa3f3;
+}
+
+.btn:active, .btn:focus {
+	color: #fff;
+}
+
+.btn a {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+}
+
+.btn-send {
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	color: #0aa3f3;
+	border: solid 0.1rem #0aa3f3 !important;
+	border-radius: .4rem !important;
+	padding: 1.6rem 0;
+	transition: ease 0.2s;
+	cursor: pointer;
+	font-weight: bold;
+	margin: 4rem auto 0;
+	width: 30rem;
+}
+
+.btn-send:hover {
+	background-color: #0aa3f3;
+	opacity: .7;
+	color: #fff;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 3px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	color: #111;
+}
+
+select {
+	border: 1px solid #ccc;
+}
+
+textarea {
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+/* Navigation
+--------------------------------------------- */
+.main-navigation {
+	display: block;
+	width: 100%;
+}
+
+.main-navigation ul {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+.main-navigation ul ul {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	float: left;
+	position: absolute;
+	top: 100%;
+	left: -999em;
+	z-index: 99999;
+}
+
+.main-navigation ul ul ul {
+	left: -999em;
+	top: 0;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	display: block;
+	left: auto;
+}
+
+.main-navigation ul ul a {
+	width: 200px;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	left: auto;
+}
+
+.main-navigation li {
+	position: relative;
+}
+
+.main-navigation a {
+	display: block;
+	text-decoration: none;
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: flex;
+	}
+}
+
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
+	margin: 0 0 1.5em;
+}
+
+.comment-navigation .nav-links,
+.posts-navigation .nav-links,
+.post-navigation .nav-links {
+	display: flex;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	flex: 1 0 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	text-align: end;
+	flex: 1 0 50%;
+}
+
+/* Posts and pages
+--------------------------------------------- */
+.sticky {
+	display: block;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/* Comments
+--------------------------------------------- */
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/* Widgets
+--------------------------------------------- */
+.widget {
+	margin: 0 0 1.5em;
+}
+
+.widget select {
+	max-width: 100%;
+}
+
+/* Media
+--------------------------------------------- */
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+	display: inline-block;
+}
+
+/* Captions
+--------------------------------------------- */
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+/* Galleries
+--------------------------------------------- */
+.gallery {
+	margin-bottom: 1.5em;
+	display: grid;
+	grid-gap: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+}
+
+.gallery-columns-2 {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery-columns-3 {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery-columns-4 {
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery-columns-5 {
+	grid-template-columns: repeat(5, 1fr);
+}
+
+.gallery-columns-6 {
+	grid-template-columns: repeat(6, 1fr);
+}
+
+.gallery-columns-7 {
+	grid-template-columns: repeat(7, 1fr);
+}
+
+.gallery-columns-8 {
+	grid-template-columns: repeat(8, 1fr);
+}
+
+.gallery-columns-9 {
+	grid-template-columns: repeat(9, 1fr);
+}
+
+.gallery-caption {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Plugins
+--------------------------------------------------------------*/
+/* Jetpack infinite scroll
+--------------------------------------------- */
+/* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+	display: none;
+}
+
+/* Re-display the Theme Footer when Infinite Scroll has reached its end. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+/* Accessibility
+--------------------------------------------- */
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: #21759b;
+	display: block;
+	font-size: 0.875rem;
+	font-weight: 700;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}
+
+/* Do not show the outline on the skip link target. */
+#primary[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/* Alignments
+--------------------------------------------- */
+.alignleft {
+	/*rtl:ignore*/
+	float: left;
+	/*rtl:ignore*/
+	margin-right: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.alignright {
+	/*rtl:ignore*/
+	float: right;
+	/*rtl:ignore*/
+	margin-left: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1.5em;
+}
+
+/* customize
+--------------------------------------------- */
+/* common
+ *===================================== */
+/* sp */
+@font-face {
+	font-family: 'supria';
+	src: url("../fonts/SupriaSansBold.otf") format("opentype"), url("../fonts/SupriaSansBold.woff") format("woff"), url("../fonts/SupriaSansBold.woff2") format("woff2");
+}
+
+html {
+	/* font-size:1.0rem = 10px */
+	font-size: 62.5%;
+}
+
+body {
+	font-family: '游ゴシック', 'Yu Gothic', '游ゴシック体', 'YuGothic', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'HiraKakuProN-W3', 'メイリオ', 'Meiryo', 'Droid Sans', 'Roboto';
+	font-size: 12px;
+	font-size: 1.2rem;
+	font-weight: 500;
+	-webkit-text-size-adjust: 100%;
+	background: #FFF;
+}
+
+.all-wrap {
+	overflow: hidden;
+	width: 100%;
+}
+
+img {
+	width: 100%;
+}
+
+* {
+	line-height: 1.2em;
+	letter-spacing: 1.2px;
+}
+
+p {
+	margin: 0;
+}
+
+.pc {
+	display: none;
+}
+
+.sp {
+	display: block;
+}
+
+i {
+	padding-right: 5px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.text-right {
+	text-align: right;
+}
+
+@media screen and (min-width: 769px) {
+	/* pc */
+	body {
+		font-size: 16px;
+		font-size: 1.6rem;
+	}
+	.pc {
+		display: block;
+	}
+	.sp {
+		display: none;
+	}
+	i {
+		padding-right: 10px;
+	}
+}
+
+.site-content {
+	padding: 7rem 0;
+}
+
+.container {
+	max-width: 117rem;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+	.container {
+		max-width: 480px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.container__inner {
+	margin-top: 8rem;
+}
+
+@media screen and (max-width: 768px) {
+	.container__inner {
+		margin-top: 6rem;
+	}
+}
+
+.ct, .entry-title {
+	font-size: 5rem;
+	font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+	.ct, .entry-title {
+		font-size: 4rem;
+	}
+}
+
+.ch {
+	font-size: 3.2rem;
+	font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+	.ch {
+		font-size: 2.8rem;
+	}
+}
+
+.site-header {
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 2;
+}
+
+.header-t {
+	background: #111;
+	font-size: 1.8rem;
+	line-height: 2.7rem;
+	color: #a0a0a0;
+	padding: 1rem 0;
+}
+
+.header-t .info_nav {
+	display: flex;
+	padding: 1rem;
+	font-size: 2rem;
+}
+
+.header-t .info_nav li {
+	margin-right: 3rem;
+}
+
+.header-t .info_nav li a:hover {
+	color: #fff;
+}
+
+.main-header {
+	padding: 3rem;
+	border-bottom: 1px solid #dbdbdb;
+}
+
+@media screen and (max-width: 768px) {
+	.main-header {
+		padding: 1.2rem 0;
+	}
+}
+
+.main-header a {
+	color: #404040;
+}
+
+.main-header a:hover {
+	opacity: .4;
+}
+
+.main-header .container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.main-header .text-logo {
+	font-size: 2.4rem;
+	line-height: 3.8rem;
+}
+
+@media screen and (max-width: 768px) {
+	.main-header .text-logo {
+		font-size: 1.8rem;
+		line-height: 2.7rem;
+	}
+}
+
+.main-header .sitenav {
+	display: flex;
+}
+
+.main-header .sitenav__item {
+	margin-left: 3.5rem;
+}
+
+.hasbanner.site-header {
+	position: absolute;
+}
+
+.hasbanner .header-t {
+	background: none;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	color: #fff;
+}
+
+.hasbanner .header-t a {
+	color: #fff;
+}
+
+.hasbanner .header-t .info_nav li a:hover {
+	color: #a0a0a0;
+}
+
+.hasbanner .main-header {
+	border-bottom: 0;
+}
+
+.hasbanner .main-header a {
+	color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+	.header-t .info_nav {
+		display: none;
+	}
+}
+
+.site-footer {
+	background: #2e2e2e;
+	color: #fff;
+}
+
+.site-footer a {
+	color: #fff;
+}
+
+.site-footer a:hover {
+	color: #a0a0a0;
+	transition: ease 0.2s;
+}
+
+.footer-b {
+	padding: 30px 0;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	text-align: center;
+}
+
+.site-main {
+	text-align: center;
+}
+
+.privacy {
+	text-align: left;
+}
+
+.privacy h2 {
+	font-weight: bold;
+	font-size: 1.8rem;
+	line-height: 2.7rem;
+	margin: 3.2rem 0 .4rem;
+}
+
+.privacy p, .privacy ul {
+	padding-left: 2.4rem;
+}
+
+.privacy li {
+	list-style: disc;
+	margin-left: 2.4rem;
+}
+
+@media screen and (max-width: 768px) {
+	.privacy p, .privacy ul {
+		padding-left: 0;
+	}
+	.privacy li {
+		margin-left: 1.6rem;
+	}
+}
+
+.banner {
+	background: #2e2e2e;
+	position: relative;
+	color: #fff;
+}
+
+.banner img {
+	width: 100%;
+	height: 78rem;
+	object-fit: cover;
+	vertical-align: top;
+	opacity: 0.5;
+}
+
+.banner .banner-text {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	transform: translate(0%, -40%);
+}
+
+.banner .banner-text .text-holder {
+	text-align: center;
+	max-width: 94rem;
+	margin: 0 auto;
+}
+
+.banner .banner-text .text-holder .title {
+	font-size: 6rem;
+	font-weight: 700;
+	line-height: 1.166em;
+	margin: 0 0 1rem;
+}
+
+@media screen and (max-width: 768px) {
+	.banner .banner-text .text-holder .title {
+		font-size: 3.2rem;
+	}
+}
+
+.servicelist__item:not(:first-child) {
+	margin-top: 12rem;
+}
+
+.servicelist__item .service__img {
+	width: 64rem;
+	max-width: 100%;
+	margin: 2rem auto;
+}
+
+.servicelist__item .service__list {
+	font-size: 1.8rem;
+	line-height: 2.7rem;
+}
+
+.companyinfo {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: 0 auto;
+	max-width: 60rem;
+}
+
+@media screen and (max-width: 768px) {
+	.companyinfo {
+		font-size: 1.6rem;
+		line-height: 2.4rem;
+	}
+}
+
+.companyinfo dt {
+	width: 40%;
+	font-weight: normal;
+}
+
+.companyinfo dd {
+	width: 60%;
+	text-align: left;
+	font-weight: bold;
+}
+
+.companyinfo dt, .companyinfo dd {
+	padding: 2.4rem 0;
+	border-bottom: solid 0.1rem #f2f2f2;
+}
+
+.companyinfo dt:nth-child(-n + 2), .companyinfo dd:nth-child(-n + 2) {
+	border-top: solid 0.1rem #f2f2f2;
+}
+
+.companyinfo dt.high, .companyinfo dd.high {
+	height: 9rem;
+}
+
+.companyinfo dt.high {
+	padding: 3.2rem 0;
+}
+
+.contactform {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0 auto;
+	width: 60rem;
+	max-width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+	.contactform {
+		display: block;
+	}
+}
+
+.contactform dt, .contactform dd {
+	padding: 2.4rem 0;
+}
+
+.contactform dt {
+	width: 30%;
+	font-weight: normal;
+	text-align: right;
+	opacity: .8;
+}
+
+@media screen and (max-width: 768px) {
+	.contactform dt {
+		text-align: left;
+		padding: 0 0 .8rem;
+		width: 100%;
+	}
+}
+
+.contactform dt.reqired::after {
+	content: '必須';
+	font-size: .7rem;
+	padding: .5rem;
+	background: #ff9393;
+	color: #fff;
+	border-radius: .2rem;
+	margin-left: .5rem;
+	position: relative;
+	bottom: .1rem;
+}
+
+.contactform dd {
+	width: 65%;
+	text-align: left;
+	font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+	.contactform dd {
+		padding: 0;
+		margin-bottom: 3.2rem;
+		width: 100%;
+	}
+}
+
+.contactform dd input, .contactform dd textarea {
+	padding: .8rem 1.2rem;
+	width: 100%;
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	cursor: inherit;
+}
+
+.contactform dd input::placeholder, .contactform dd textarea::placeholder {
+	opacity: .4;
+	font-weight: normal;
+}
+
+@media screen and (max-width: 768px) {
+	.contactform dd input, .contactform dd textarea {
+		width: 100%;
+	}
+}
+
+.contactform dd textarea {
+	width: calc(100% - 2.4rem);
+}
+
+.contactform .btn-block span {
+	display: none;
+}
+
+/*　ハンバーガーボタン　 */
+.hamburger {
+	z-index: 3;
+	width: 42px;
+	height: 42px;
+	cursor: pointer;
+	text-align: center;
+	position: relative;
+}
+
+.hamburger span {
+	display: block;
+	position: absolute;
+	width: 3rem;
+	height: .2rem;
+	left: .6rem;
+	background: #404040;
+	transition: 0.3s ease-in-out;
+}
+
+.hamburger span:nth-child(1) {
+	top: 1rem;
+}
+
+.hamburger span:nth-child(2) {
+	top: 2rem;
+}
+
+.hamburger span:nth-child(3) {
+	top: 3rem;
+}
+
+.hamburger.active span:nth-child(1) {
+	top: 1.6rem;
+	left: .6rem;
+	transform: rotate(-45deg);
+}
+
+.hamburger.active span:nth-child(2), .hamburger.active span:nth-child(3) {
+	top: 1.6rem;
+	transform: rotate(45deg);
+}
+
+/* ナビ開いてる時のボタン */
+nav.globalMenuSp {
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	text-align: center;
+	transform: translateY(-100%);
+	transition: all 0.6s;
+	width: 100%;
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+}
+
+nav.globalMenuSp ul.hamburgermenu {
+	background: #ccc;
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+}
+
+nav.globalMenuSp ul.hamburgermenu:first-child {
+	padding-top: 4rem;
+}
+
+nav.globalMenuSp ul.hamburgermenu li {
+	padding: 1.6rem 0;
+	width: 100%;
+	border-bottom: 1px solid #fff;
+}
+
+nav.globalMenuSp ul.hamburgermenu li:hover {
+	background: #ddd;
+}
+
+nav.globalMenuSp ul.hamburgermenu li a {
+	display: block;
+	color: #000;
+	padding: 1em 0;
+	text-decoration: none;
+}
+
+nav.globalMenuSp ul.info_nav {
+	background: #ccc;
+	padding: 4rem 0 3.2rem;
+}
+
+nav.globalMenuSp ul.info_nav li {
+	padding: 1.2rem;
+}
+
+nav.globalMenuSp.active {
+	transform: translateY(0%);
+}
+
+/* このクラスを、jQueryで付与・削除する */
+.hasbanner .hamburger span {
+	background: #fff;
+}
+
+@media screen and (max-width: 768px) {
+	.hasbanner ul.info_nav a {
+		color: #404040;
+	}
+}
+
+/*# sourceMappingURL=style.css.map */
